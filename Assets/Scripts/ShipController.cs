@@ -8,7 +8,9 @@ public class ShipController : MonoBehaviour
     [System.Serializable]
     public class MyWeapon
     {
-        public GameObject myBarrel;
+        public Transform myBarrel;
+        public GameObject myAmmo;
+        public int fireForce;
 
         public float fireTimer;
         public float fireTimerMax;
@@ -70,6 +72,10 @@ public class ShipController : MonoBehaviour
             if (myWeapon.fireTimer >= myWeapon.fireTimerMax)
             {
                 Debug.Log("Ship Firing");
+              
+                GameObject ammo = Instantiate(myWeapon.myAmmo,myWeapon.myBarrel);   
+                Rigidbody2D ammorb = ammo.GetComponent<Rigidbody2D>();
+                ammorb.AddForce(-transform.up* myWeapon.fireForce);
                 myWeapon.fireTimer = 0;
             }
         }
