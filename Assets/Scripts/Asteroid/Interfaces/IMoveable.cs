@@ -5,5 +5,5 @@ using UnityEngine;
 public interface IMoveable 
 {
    
-    void AsteroidMove(float MoveSpeed);
+    void IMoveable(float MoveSpeed);
 }
