@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IMoveable 
+public interface IDamageable 
 {
-   
-    void AsteroidMove(float MoveSpeed);
+    void IDamage(float damageAmount);
 }
