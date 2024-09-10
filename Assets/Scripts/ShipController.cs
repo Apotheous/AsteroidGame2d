@@ -61,7 +61,17 @@ public class ShipController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (shipRb.transform.position.x > 8f)
+        {
+            moveDirection.x = Mathf.Clamp(horizontalInput, -1, 0);
+        }
+        else if (shipRb.transform.position.x < -8f)
+        {
+            moveDirection.x = Mathf.Clamp(horizontalInput, 0, 1);
+        }
         shipRb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+ 
+
     }
 
     private void ShipFiring()
