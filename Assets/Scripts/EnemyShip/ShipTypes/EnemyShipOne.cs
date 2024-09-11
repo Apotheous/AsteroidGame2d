@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class EnemyShipOne : EnemyShipBase,IMoveable
+public class EnemyShipOne : EnemyShipBase,IMoveable,IDamageable
 {
     [System.Serializable]
     public class MyWeapon
@@ -108,5 +108,27 @@ public class EnemyShipOne : EnemyShipBase,IMoveable
 
         // Nesneyi hareket ettir (saða veya sola)
         transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Bullet")
+        {
+            IDamage(collision.transform.GetComponent<BulletDestroy>().MyDamage);
+        }
+    }
+
+    public void IDie()
+    {
+        Destroy(gameObject);
+        Time.timeScale = 0f;
+    }
+    public void IDamage(float damageAmount)
+    {
+        CurrentHealth -= damageAmount;
+        healthBar.fillAmount = CurrentHealth / MaxHealth;
+        if (CurrentHealth <= 0)
+        {
+            IDie();
+        }
     }
 }

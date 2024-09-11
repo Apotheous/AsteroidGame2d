@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletDestroy : MonoBehaviour
 {
+    public float MyDamage;
     public float lifetime = 5f; // Merminin ömrü (saniye)
     private float lifeTimer;
 

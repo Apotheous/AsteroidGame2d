@@ -104,7 +104,10 @@ public class ShipController : MonoBehaviour,IDamageable
         {
             IDamage(collision.transform.GetComponent<Asteroid>().damage);
         }
-
+        if (collision.transform.tag=="Bullet")
+        {
+            IDamage(collision.transform.GetComponent<BulletDestroy>().MyDamage);
+        }
         
     }
 

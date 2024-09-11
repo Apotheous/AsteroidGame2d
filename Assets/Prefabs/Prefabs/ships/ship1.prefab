@@ -190,9 +190,9 @@ MonoBehaviour:
   myWeapon:
     myBarrel: {fileID: 4751803139242131345}
     myAmmo: {fileID: 1019480068096796, guid: 1740469607c5ef74a9dce354e6c48998, type: 3}
-    fireForce: 150
+    fireForce: 20
     fireTimer: 0
-    fireTimerMax: 0.1
+    fireTimerMax: 0.4
     isFiring: 0
   MaxHealth: 200
   CurrentHealth: 0
@@ -202,6 +202,9 @@ MonoBehaviour:
   maxX: 5
   minX: -5
   moveDirection: {x: 0, y: 0}
+  targetDirection: {x: 0, y: 0}
+  targetDistance: 0
+  target: {fileID: 0}
 --- !u!60 &1865394627423100408
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -268,7 +271,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512782934554904}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -286,7 +289,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1818141105757828
 GameObject:
   m_ObjectHideFlags: 0

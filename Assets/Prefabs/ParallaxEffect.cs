@@ -17,7 +17,7 @@ public class ParallaxEffect : MonoBehaviour
 
     void Update()
     {
-         distanceY = Vector3.Distance(cam.transform.position, transform.position); ;
+         distanceY = Vector3.Distance(cam.transform.position, transform.position);
 
         if (distanceY > spriteHeight && distanceY !> spriteHeight * 2f)
         {
