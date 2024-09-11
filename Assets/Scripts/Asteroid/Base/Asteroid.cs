@@ -14,6 +14,7 @@ public class Asteroid : MonoBehaviour, IDamageable
     public float damage;
 
     public Image healthBar;
+    //public GameManager gameManager;
     private void Start()
     {
         SetAsteroidProperties(asteroidType);
@@ -33,6 +34,7 @@ public class Asteroid : MonoBehaviour, IDamageable
     public void IDie()
     {
         Debug.Log("Asteroid +-+- die");
+        GameManager.instance.scoreVal += 50;
         Destroy(this.gameObject);
     }
 
