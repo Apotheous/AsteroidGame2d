@@ -104,6 +104,7 @@ public class ShipController : MonoBehaviour,IDamageable
         {
             IDamage(collision.transform.GetComponent<Asteroid>().damage);
         }
+
         
     }
 
