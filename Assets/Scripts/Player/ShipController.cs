@@ -46,6 +46,7 @@ public class ShipController : MonoBehaviour,IDamageable
     // Update is called once per frame
     void Update()
     {
+
         GetInputs();
 
         ShipFiring();

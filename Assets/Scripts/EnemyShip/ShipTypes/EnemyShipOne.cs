@@ -120,7 +120,7 @@ public class EnemyShipOne : EnemyShipBase,IMoveable,IDamageable
     public void IDie()
     {
         Destroy(gameObject);
-        Time.timeScale = 0f;
+        GameManager.instance.scoreVal += 500;
     }
     public void IDamage(float damageAmount)
     {

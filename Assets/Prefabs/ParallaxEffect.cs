@@ -5,9 +5,9 @@ using UnityEngine;
 public class ParallaxEffect : MonoBehaviour
 {
     public float startPosY, spriteHeight;
-    public GameObject cam;
-    public float parallaxEffectY;
+    public GameObject ship;
     public float distanceY;
+    public float dif=3f;
 
     void Start()
     {
@@ -17,11 +17,11 @@ public class ParallaxEffect : MonoBehaviour
 
     void Update()
     {
-         distanceY = Vector3.Distance(cam.transform.position, transform.position);
+        distanceY = Vector3.Distance(ship.transform.position, transform.position);
 
-        if (distanceY > spriteHeight && distanceY !> spriteHeight * 2f)
+        if (distanceY > spriteHeight + 5f && distanceY > spriteHeight * 2f - 5f)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + spriteHeight * 3f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + spriteHeight * dif, transform.position.z);
         }
     }  
 }
