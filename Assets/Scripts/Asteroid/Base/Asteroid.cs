@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Asteroid : MonoBehaviour, IDamageable
+public class Asteroid : MonoBehaviour, IDamageable, IMoveable
 {
     public AsteroidType asteroidType;
 
@@ -12,6 +12,7 @@ public class Asteroid : MonoBehaviour, IDamageable
 
     //public float scale;
     public float damage;
+    public float MoveSpeed;
 
     public Image healthBar;
     //public GameManager gameManager;
@@ -20,6 +21,10 @@ public class Asteroid : MonoBehaviour, IDamageable
         SetAsteroidProperties(asteroidType);
         CurrentHealth = maxHealth;
         
+    }
+    private void FixedUpdate()
+    {
+        IMoveable(MoveSpeed);
     }
     public void IDamage(float damageAmount)
     {
@@ -40,7 +45,11 @@ public class Asteroid : MonoBehaviour, IDamageable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        IDamage(20);
+        if (collision.transform.tag == "Bullet")
+        { 
+            IDamage(20); 
+        }  
+
     }
 
     private void SetAsteroidProperties(AsteroidType asteroidType)
@@ -62,6 +71,11 @@ public class Asteroid : MonoBehaviour, IDamageable
             default:
                 break;
         }
+    }
+
+    public void IMoveable(float MoveSpeed)
+    {
+        transform.Translate(-transform.up * MoveSpeed * Time.deltaTime);
     }
 }
 

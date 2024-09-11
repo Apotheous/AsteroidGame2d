@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
-public class ShipController : MonoBehaviour
+public class ShipController : MonoBehaviour,IDamageable
 {
     [System.Serializable]
     public class MyWeapon
@@ -20,9 +21,10 @@ public class ShipController : MonoBehaviour
 
     public MyWeapon myWeapon;
 
-    public int MaxHealth;
+    public float MaxHealth;
+    public float CurrentHealth;
 
-
+    public Image healthBar;
 
     public Rigidbody2D shipRb;
 
@@ -38,6 +40,7 @@ public class ShipController : MonoBehaviour
     void Start()
     {
         myWeapon.isFiring = false;
+        CurrentHealth = MaxHealth;
     }
 
     // Update is called once per frame
@@ -92,6 +95,30 @@ public class ShipController : MonoBehaviour
         else 
         {
             myWeapon.fireTimer = 0;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.GetComponent<Asteroid>() != null)
+        {
+            IDamage(collision.transform.GetComponent<Asteroid>().damage);
+        }
+        
+    }
+
+    public void IDie()
+    {
+        Destroy(gameObject);
+        Time.timeScale = 0f;
+    }
+    public void IDamage(float damageAmount)
+    {
+        CurrentHealth -= damageAmount;
+        healthBar.fillAmount = CurrentHealth / MaxHealth;
+        if (CurrentHealth <= 0)
+        {
+            IDie();
         }
     }
 }

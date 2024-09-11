@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7997106071794780008}
   - component: {fileID: -4892648299020056161}
   - component: {fileID: 6013060096626577376}
+  - component: {fileID: -3452239599637352952}
   m_Layer: 0
   m_Name: AsterSmall6
   m_TagString: Untagged
@@ -99,8 +100,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94070f0d951ee314fbcaa93aaf8e8c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidType: 0
   maxHealth: 100
   CurrentHealth: 100
+  damage: 0
+  MoveSpeed: 1.5
   healthBar: {fileID: 953854998296750283}
 --- !u!60 &6013060096626577376
 PolygonCollider2D:
@@ -153,6 +157,33 @@ PolygonCollider2D:
       - {x: 0.25, y: 0.17}
       - {x: 0.21, y: 0.21}
   m_UseDelaunayMesh: 0
+--- !u!50 &-3452239599637352952
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72295631480350893}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &5037708841318094846
 PrefabInstance:
   m_ObjectHideFlags: 0

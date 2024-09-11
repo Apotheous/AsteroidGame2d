@@ -103,8 +103,8 @@ MonoBehaviour:
   asteroidType: 2
   maxHealth: 0
   CurrentHealth: 0
-  scale: 0
   damage: 0
+  MoveSpeed: 1.5
   healthBar: {fileID: 155719015817239837}
 --- !u!60 &3902713846348596669
 PolygonCollider2D:
