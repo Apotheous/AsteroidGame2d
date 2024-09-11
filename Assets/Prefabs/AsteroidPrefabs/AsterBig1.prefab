@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  CurrentHealth: 0
+  CurrentHealth: 100
   healthBar: {fileID: 155719015817239837}
 --- !u!60 &3902713846348596669
 PolygonCollider2D:
@@ -201,6 +201,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4644351440221104986}
     m_Modifications:
+    - target: {fileID: 4003159491850161410, guid: 93bc703fdd75b33498ed919f07a9e0e8, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5209278872126671105, guid: 93bc703fdd75b33498ed919f07a9e0e8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -267,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5209278872126671105, guid: 93bc703fdd75b33498ed919f07a9e0e8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.9228592
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209278872126671105, guid: 93bc703fdd75b33498ed919f07a9e0e8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
