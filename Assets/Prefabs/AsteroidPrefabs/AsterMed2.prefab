@@ -99,8 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94070f0d951ee314fbcaa93aaf8e8c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidType: 1
   maxHealth: 100
   CurrentHealth: 100
+  scale: 0
+  damage: 0
   healthBar: {fileID: 9113345620364281717}
 --- !u!60 &8856380702985032739
 PolygonCollider2D:

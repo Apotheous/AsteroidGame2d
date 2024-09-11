@@ -516,6 +516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AsteroidSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 2849916312252006177, guid: b6df4ec16dd404e45b55d4abdea583e9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4654596220237421816, guid: b6df4ec16dd404e45b55d4abdea583e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -566,6 +570,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 880662408}
   - {fileID: 1036173641}
   - {fileID: 5109957493184841236}
+  - {fileID: 880662408}
