@@ -31,7 +31,6 @@ public class AsteroidManager : MonoBehaviour, IMoveable
 
     private void SpawnAsteroid()
     {
-
         Asteroid ast = Instantiate(myAsteroids[currentSpawnAst], mySpawnPoint);
         ast.transform.position = new Vector3(Random.Range(-8f, 8f), mySpawnPoint.position.y, 0);
         ast.transform.SetParent(null);
