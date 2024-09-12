@@ -13,7 +13,7 @@ public class Destroyer : MonoBehaviour, IMoveable
 
     public void IMoveable(float MoveSpeed)
     {
-        transform.Translate(transform.up * MoveSpeed * Time.deltaTime);
+        transform.Translate(-transform.up * MoveSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -10,12 +10,11 @@ public class Asteroid : MonoBehaviour, IDamageable, IMoveable
     public float maxHealth;
     public float CurrentHealth;
 
-    //public float scale;
     public float damage;
     public float MoveSpeed;
 
     public Image healthBar;
-    //public GameManager gameManager;
+
     private void Start()
     {
         SetAsteroidProperties(asteroidType);
@@ -38,7 +37,6 @@ public class Asteroid : MonoBehaviour, IDamageable, IMoveable
 
     public void IDie()
     {
-        Debug.Log("Asteroid +-+- die");
         GameManager.instance.scoreVal += 50;
         Destroy(this.gameObject);
     }
@@ -48,8 +46,7 @@ public class Asteroid : MonoBehaviour, IDamageable, IMoveable
         if (collision.transform.tag == "Bullet")
         { 
             IDamage(20); 
-        }  
-
+        }    
     }
 
     private void SetAsteroidProperties(AsteroidType asteroidType)

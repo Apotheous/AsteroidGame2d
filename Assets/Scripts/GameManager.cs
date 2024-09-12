@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -18,7 +17,6 @@ public class GameManager : MonoBehaviour
         set
         {
             _scoreVal = value;
-            // Her skor deðiþiminde event tetiklenir
             if (onScoreChanged != null)
             {
                 onScoreChanged(_scoreVal);
@@ -35,14 +33,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Skor deðiþtiðinde bu fonksiyon tetiklenir
+
         onScoreChanged += UpdateScoreText;
-        scoreVal = 0; // Baþlangýç deðeri
+        scoreVal = 0; 
     }
 
-    // Skor metnini günceller
     void UpdateScoreText(int newScore)
     {
         scoreText.text = "Score : " + newScore;
     }
 }
+
+

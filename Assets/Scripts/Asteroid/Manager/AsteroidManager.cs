@@ -7,17 +7,13 @@ public class AsteroidManager : MonoBehaviour, IMoveable
 {
 
     public float moveSpeed;
-    //public float moveRightSpeed;
 
     public List<Asteroid> myAsteroids = new List<Asteroid>();
     public GameObject enemyShip;
 
     public Transform mySpawnPoint;
 
-    private float spawnTimer;
-    public float spawnTimerLate;
     private int currentSpawnAst;
-    private int currentSpawnPoint;
 
     void Start()
     {
@@ -27,7 +23,6 @@ public class AsteroidManager : MonoBehaviour, IMoveable
     void Update()
     {
         IMoveable(moveSpeed);
-
     }
 
     private void SpawnAsteroid()
@@ -37,14 +32,12 @@ public class AsteroidManager : MonoBehaviour, IMoveable
         ast.transform.SetParent(null);
  
         currentSpawnAst++;
-        currentSpawnPoint++;
         if (currentSpawnAst >= myAsteroids.Count)
         {
             GameObject enemyS = Instantiate(enemyShip, mySpawnPoint);
             enemyS.transform.SetParent(null);
             currentSpawnAst = 0;
         }
-
     }
 
     public void IMoveable(float MoveSpeed)

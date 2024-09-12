@@ -5,15 +5,13 @@ using UnityEngine;
 public class BulletDestroy : MonoBehaviour
 {
     public float MyDamage;
-    public float lifetime = 5f; // Merminin ömrü (saniye)
+    public float lifetime = 5f; 
     private float lifeTimer;
 
     private void OnEnable()
     {
         lifeTimer = lifetime;
     }
-
-
     private void Update()
     {
         lifeTimer -= Time.deltaTime;

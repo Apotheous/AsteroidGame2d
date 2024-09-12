@@ -4,6 +4,5 @@ using UnityEngine;
 
 public interface IMoveable 
 {
-   
     void IMoveable(float MoveSpeed);
 }

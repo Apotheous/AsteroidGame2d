@@ -28,8 +28,8 @@ public class EnemyShipOne : EnemyShipBase,IMoveable,IDamageable
     public Rigidbody2D shipRb;
 
 
-    public float MoveSpeed = 5f; // Hareket hýzý
-    public float maxX = 5f;      // Sað sýnýr
+    public float MoveSpeed = 5f; 
+    public float maxX = 5f;      
     public float minX = -5f;
     public Vector2 moveDirection = Vector2.zero;
     public Vector2 targetDirection = Vector2.zero;
@@ -48,6 +48,7 @@ public class EnemyShipOne : EnemyShipBase,IMoveable,IDamageable
         IMoveable(MoveSpeed);
         
         TargetCheck();
+        
     }
     public void TargetCheck()
     {
@@ -71,8 +72,6 @@ public class EnemyShipOne : EnemyShipBase,IMoveable,IDamageable
             myWeapon.fireTimer += Time.deltaTime;
             if (myWeapon.fireTimer >= myWeapon.fireTimerMax)
             {
-                Debug.Log("Ship Firing");
-
                 GameObject ammo = Instantiate(myWeapon.myAmmo, myWeapon.myBarrel);
                 ammo.transform.SetParent(null);
                 ammo.transform.rotation = Quaternion.LookRotation(Vector3.forward, targetDirection);
@@ -88,15 +87,12 @@ public class EnemyShipOne : EnemyShipBase,IMoveable,IDamageable
     }
     public void IMoveable(float moveSpeed)
     {
-
-        // X pozisyonunu kontrol et, eðer sýnýrlarý aþarsa yönü tersine çevir
         if (transform.position.x >= maxX)
         {
             if (moveSpeed>0)
             {
                 MoveSpeed = moveSpeed*-1f;
             }
-            // Hýzý tersine çevir
         }
         else if (transform.position.x <= minX)
         {
@@ -105,8 +101,6 @@ public class EnemyShipOne : EnemyShipBase,IMoveable,IDamageable
                 MoveSpeed = moveSpeed * -1f;
             }
         }
-
-        // Nesneyi hareket ettir (saða veya sola)
         transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
     }
     private void OnCollisionEnter2D(Collision2D collision)
