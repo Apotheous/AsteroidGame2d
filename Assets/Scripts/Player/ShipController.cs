@@ -73,7 +73,7 @@ public class ShipController : MonoBehaviour,IDamageable
         {
             moveDirection.x = Mathf.Clamp(horizontalInput, 0, 1);
         }
-        shipRb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        shipRb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
  
 
     }
